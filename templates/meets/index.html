@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Meets{% endblock %}</h1>
+  {% if g.user %}
+    <a class="action" href="{{ url_for('meets.create') }}">New</a>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+
+<a class="action" href="{{ url_for('meets.create') }}">New</a>  
+
+{% if updates: %}
+  <div class="divtextbox" id="div3">
+    <h2>Recent additions to planned meets schedule</h2>
+      <ul>
+      
+      {% for update in updates.values(): %}
+      
+        <li>{{ update.date }}: {{ update.meetname }} meet added by {{ update.user }}</li>
+
+      {% endfor %}
+
+      </ul>
+  </div>
+{% endif %}
+
+<div class="divtextbox" id="div1">
+  <h1>Meets</h1>
+
+  <p>
+    Our current planned weekend meets programme is shown below.
+    Dates shown are inclusive of the first and last days 
+    - so a three-day meet includes two nights accommodation.
+    Full details of the booking process are in our 
+    <a href="index#faq-meets">meets FAQ</a>.
+    <i>Important: If you book on a hut meet and then cancel, your fee is forfeit unless a replacement is found.</i>
+    Prospective members should also read the <a href="index#faq-new">new members FAQ</a>
+  </p>
+  
+  <p>
+    We also have a <a href="climbing">regular Wednesday climbing meet</a>.
+  </p>
+  <p>
+    The regular pub night is usually on the first Tuesday of the month from 8pm
+ onwards. See the list of upcoming <a href="index#EVENTS">events for the next pub night venue</a>.
+  </p>
+  
+<p>
+This can be subject to change so please check the upcoming events on the <a href="../emc/index">homepage</a> for any amendments.
+</p>
+</div>
+
+<TABLE class="stripy">
+  <COLGROUP>
+  <COL width="22%"><!--DATE-->
+  <COL width="26%"><!--LOCATION-->
+  <COL width="18%"><!--TYPE-->
+  <COL width="14%"><!--PLACES-->
+  <COL width="20%"><!--CONTACT-->
+  <TBODY>
+  <TR>
+    <td><b>Date </b></td><td><b>Location </b></td><td><b>Meet Type </b></td><td><b>Places </b></td><td><b>Contact</b></td> </TR>
+  <TR>
+
+  {% for meet in meets.values() %}
+
+    <!-- <tr class="darkrow">
+      <td>
+        {{ meet['datedesc'] }}<br><i>(booking opens {{ meet['booking'] }})</i>
+      </td>
+      <td>
+        <a href="{{ meet['link'] }}">{{ meet['accommodation'] }}</a><br>{{ meet['location'] }}
+      </td>
+      <td>
+        {{ meet['accommodationtype'] }}<br><i>Meet fee &#163;{{ meet['fee'] }}</i>
+      </td>
+      <td>
+        {{ meet['places'] }} places
+      </td>
+      <td>
+        Keith <br>stickshaldane@hotmail.com
+      </td>
+    </tr> -->
+
+    <tr class="darkrow">
+      <td>
+        {{ meet.date_info.dates }}
+
+        {%if meet.date_info.datedesc %} <br /> ({{meet.date_info.datedesc}}) {% endif %}
+
+        {% if meet.date_info.booking_status %} 
+          <br /><strong>Booking now</strong> 
+        {% else %}  
+          <br /><em>(booking opens {{ meet.date_info.booking_date }} at 6pm )</em>
+        {% endif %}
+
+      </td>
+      <td>
+        
+        {% if meet.location.link %}
+          <a href="{{ meet.location.link }}">{{ meet.location.accommodation_name }}</a>
+        {% else %}
+          {{ meet.location.accommodation_name }}
+        {% endif %}
+        
+        ({{ meet.location.location }})
+
+      </td>
+      <td>
+        {{ meet.accommodation.type }}
+        <br />
+        <em>Meet fee &#163;{{ meet.accommodation.cost_value }}</em>
+        
+        {%if meet.accommodation.cost_detail %} <br /> ({{ meet.accommodation.cost_detail }}) {% endif %}
+      </td>
+      <td>
+        {% if meet.nplaces.places_str %} {{ meet.nplaces.places_str }} {% endif %}
+        {% if meet.nplaces.camping_info %} <em>{{ meet.nplaces.camping_info }}</em> {% endif %}
+      </td>
+      <td>
+        {{ meet.contact }}
+      </td>
+    </tr>
+
+  {% endfor %}
+
+</TBODY>
+</TABLE>
+
+<p>
+  For past meets see the
+  <a href="{{ url_for('meets.meet_reports') }}">meet reports page</a>.
+</p>
+
+{% endblock %}

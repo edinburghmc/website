@@ -1,0 +1,270 @@
+{% extends 'base.html' %}
+
+
+{% block header %}
+<h1>{% block title %}Edinburgh Mountaineering Club{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+
+    <div class="divtextbox" id="div1">
+  
+      <h1>What is the EMC?</h1>
+          
+      <p>
+        The EMC is a small group of experienced outdoor enthusiasts. Our
+        activities are focused on weekends away ("<a href="meets.html">Meets</a>")
+        in Scotland and further afield, mid-week <a href="climbing.html">climbing</a>
+        and a monthly catch-up in the <a href="#pub">pub</a>. We have around 80
+        members, most of whom are based in Edinburgh and we have a diverse range of
+        interests including hillwalking, climbing, running, skiing and cycling.
+        <br /><br />
+        We welcome enquiries from new members who are over the age of 18 and who accept
+        responsibility for their own safety in the mountains.
+        <br /><br />
+        For more information, please consult the 
+        <a href="#faq-new">New Members FAQ</a> 
+        and 
+        <a href="#faq-meets">Meets FAQ</a>
+        below, and contact our <a href="contacts">Membership Secretary</a>.
+      <p>  
+  
+      <h1 id='events'>What's on?</h1>
+
+      <p>
+        <table class="stripy">
+
+            {% for (event_time, event_details) in events: %}
+                    
+            <tr class="lightrow"><td width="25%">{{ event_time }}</td><td style="padding-left:15"> {{ event_details }}</td></tr>
+
+            {% endfor %}
+          
+        </table>  
+        (For more details, see the <a href="meets.html">meets</a> page.
+        Records of past meets are on the <a href="meets/reports.html"> meet reports</a> page.)
+      </p>
+        
+    </div>
+
+
+    <div class="divtextbox" id="div2">
+
+        <a name="faq-new"></a>
+        <h1>EMC New Members FAQ</h1>
+      
+        <div class="divphotobox">
+          <table class="tight" style="width:400px" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="staticslide">
+                <img src="../img/image545medium.jpg" alt="Serious scrambling on Skye">
+              </td>
+            </tr>
+            <tr>
+              <td class="staticslidecaption">
+            Serious scrambling on Skye
+              </td>
+            </tr>
+          </table>
+        </div>
+      
+        <h2>Do I Have enough experience?</h2>
+      
+        <p>
+          The club is for experienced mountaineers. You must be able to:d
+          <ul>
+            <li>
+          be responsible for your own safety on the hill;
+            </li>
+            <li>
+          be comfortable navigating for yourself; and
+            </li>
+            <li>
+          have the appropriate equipment (including ice-axe and crampons in winter) and the skills to use it. 
+            </li>
+          </ul>
+        </p>
+      
+        <p>
+          Many people who join are keen summer hill walkers who want do things which they would not attempt by themselves, such as scrambling, winter walking/climbing, or
+          bagging some of the more remote Munros.
+          <br /><br />
+          We don't provide tuition, but many of our members are highly experienced mountaineers, so you will have the opportunity to learn and develop your skills.
+        </p>
+      
+        <h2>Do I need to be able to climb?</h2>
+      
+        <p>
+          No! We have a very active group of climbers in the club, but not all members would call themselves climbers. If you are an experienced hill walker who
+          is also keen to try climbing, the EMC provides an opportunity to do this, provided you know how to belay. See the <a href="climbing">climbing page</a> for more information.
+        </p>
+      
+      
+        <h2>How fit do I need to be?</h2>
+      
+        <p>
+          Fitness levels vary across the club, but you should be comfortable walking for at least 6 hours and 1000 metres of ascent at a reasonable pace.
+        </p>
+      
+      
+        <h2>Does it matter if I don't have experience in winter?</h2>
+      
+        <p>
+          Not necessarily.   However, if you've never used an ice axe and crampons before then you must do a winter skills course prior to coming out on a winter meet.
+        </p>
+      
+        <h2>How old are most members?</h2>
+      
+        <p>
+          The youngest of the active members are in their twenties and the oldest are in their seventies. All members must be over 18 years.
+        </p>
+      
+        <div class="divphotobox">
+          <table class="tight" style="width:400px" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="staticslide">
+                <img src="../img/image455medium.jpg" alt="A Scottish &quot;Grade I&quot; winter route">
+              </td>
+            </tr>
+            <tr>
+              <td class="staticslidecaption">
+            A Scottish &quot;Grade I&quot; winter route
+              </td>
+            </tr>
+          </table>
+        </div>
+      
+        <h2>How do I find out more?</h2>
+      
+        <p>
+          Contact our <a href="contacts">Membership Secretary</a> and tell them a bit about yourself and your interests/experience.   They can add you to the mailing list and answer any questions you may have.
+        </p>
+      
+        <a name="pub"></a>
+        <p>
+          Alternatively, come along to the pub night to meet some members. This takes place on the first Tuesday of the month at the Red Squirrel on Lothian Road from 8pm.  
+          Click
+          <a href="https://www.google.co.uk/maps/place/Red+Squirrel/@55.9484754,-3.2083458,17z/data=!3m2!4b1!5s0x4887c798757179bb:0x8670a3554fa9251a!4m5!3m4!1s0x4887c798757bd1d7:0x1ac20b50fa3fd01a!8m2!3d55.9484754!4d-3.2061571">here</a> for a map.
+        </p>
+      
+        <h2>How much is membership and what are the benefits?</h2>
+      
+        <p>
+          Membership costs &pound;27 per year, payable in April (2023 rates). If you join the club part way through the year, the fee is reduced pro rata. 
+          Your subscription includes membership of Mountaineering Scotland which gives you access to affiliated club huts, discounts on skills training
+          courses, a regular magazine and, most importantly, third party liability insurance cover. Members are eligible to apply for BMC travel insurance
+          and are also entitled to a range of other discounts with Tiso and other outdoor providers. If you're already an member of Mountaineering Scotland (either as an independent member, or via another club), the annual membership fee is reduced to &pound;6.85 per year.
+        </p>
+      
+      </div>
+      
+      <div class="divtextbox" id="div3">
+      
+        <a name="faq-meets"></a>
+        <h1>EMC Meets FAQ: What happens on a meet and how do I book on?</h1>
+      
+        <div id="photodiv" class="divphotobox">
+          <table class="tight" style="width:400px" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="staticslide">
+                <img src="../img/image51medium.jpg" alt="Carrbridge Bunkhouse">
+              </td>
+            </tr>
+            <tr>
+              <td class="staticslidecaption">
+            Carrbridge Bunkhouse
+              </td>
+            </tr>
+          </table>
+        </div>
+      
+        <h2>When and where are meets?</h2>
+      
+        <p>
+          With the exception of holiday weekends and New Year, the accommodation is typically booked for Friday and Saturday nights. We have an annual day 
+          walk which is close to Edinburgh, otherwise venues are chosen across Scotland and occasionally the Lake District, Snowdonia and further afield.
+          See our current <a href="meets">meets</a> programme for more details. 
+        </p>
+      
+        <div class="divphotobox">
+          <table class="tight" style="width:400px" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="staticslide">
+                <img src="../img/image78medium.jpg" alt="Campsite">
+              </td>
+            </tr>
+            <tr>
+              <td class="staticslidecaption">
+            Campsite with a view
+              </td>
+            </tr>
+          </table>
+        </div>
+      
+        <h2>How do I book a place on a meet?</h2>
+      
+        <p>
+          The booking rules for all meets apply equally to members and non-members. If you are not a member yet we will ask you to pay the meet fee in advance. 
+          <br /><br />
+          The committee member responsible for the meet will take bookings by text, telephone or email from 6pm on the <a href='meets'>date advertised</a>. Telephone bookings should not be made after 10pm. 
+          You can also book on behalf of one other person.
+          <br /><br />
+          If you book on a meet and then cancel, your fee is forfeit unless a replacement is found. 
+          <br /><br />   
+          <strong>Please note</strong>: The meet organiser has the right to not accept a booking on a meet from a potential new member if they judge that person 
+          not to have the requisite skills/experience.
+        </p>
+        <h2>What happens if a meet is oversubscribed?</h2>
+      
+        <p>
+        Bookings are taken by the <a href='meets'>meet organiser</a>. All bookings are given equal priority if they are made on the night bookings open (between 6pm and 10pm please!) 
+          and if the meet is over-subscribed a ballot is held. After the first night, places are assigned on a first come, first served basis. 
+        </p>
+        <p>
+          The meets organiser will email the list of attendees and any reserves will be given the opportunity - in turn - to take any places which are freed up.
+        </p>
+      
+        <h2>What should I bring?</h2>
+      
+        <p>
+          In addition to maps, all your normal walking or climbing gear and any safety equipment. The meets organiser will send information about the meet venue and whether you need to bring any gear such as a sleeping bag or sleeping mat.
+        </p>
+        <p>
+          For camping meets you will need a tent, stove etc as well.
+        </p>
+        <p>
+          Bring enough food and drink for the entire meet.
+        </p>
+      
+        <div id="photodiv" class="divphotobox">
+          <table class="tight" style="width:400px" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="staticslide">
+                <img src="../img/image11medium.jpg" alt="You can never have too much food">
+              </td>
+            </tr>
+            <tr>
+              <td class="staticslidecaption">
+                You can never have too much food
+              </td>
+            </tr>
+          </table>
+        </div>
+        
+        <h2>What's the schedule on weekend trips?</h2>
+      
+        <p>
+          There's no set programme during meets. Plans for each day's activities are usually discussed the night before, and people divide into small groups
+          so that they can walk or climb with other people with similar aims for the day, or go solo. The meet organiser will try to make sure you link up with 
+          a suitable group, but <strong>you are responsible for your own activities and for your own safety</strong>. Self-sufficiency is key!
+        </p>
+      
+        <h2>How is transport organised?</h2>
+      
+        <p>
+          Transport to and from meets is usually by private car. We try to keep costs and environmental impact to a minimum by sharing lifts where possible; many of the meet venues are also accessible by public transport. If you can offer a lift/if you need a lift, please email the members list or let the meet organiser know. 
+        </p>
+      
+      </div>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Committee members{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+
+<div class="divtextbox" id="div1">
+
+<!-- <h1>{{ committee.type }}</h1> -->
+
+
+<h1>Contacts</h1>
+
+<p>
+  The current committee contact details are given below.
+  Prospective new members are invited to contact the membership secretary or president.
+  Our general enquiries email address is
+  <script language="JavaScript">
+    document.write('<a href="mailto:enquiries' + '@' + 'edinburghmc.org.uk">' + 'enquiries' +	'@' + 'edinburghmc.org.uk</a>'); 
+  </script>, or
+  <script language="JavaScript">
+    document.write('<a href="mailto:climbing' + '@' + 'edinburghmc.org.uk">' + 'climbing' + '@' + 'edinburghmc.org.uk</a>'); 
+  </script> for queries concerning the club's climbing activities.
+</p>
+
+<table class="stripy" style="margin-left: auto; margin-right: auto;">
+    <tr>
+        <td><b>President</b></td>
+        <td>Mike W</td>
+        <td>07870 826 935<br><script language="JavaScript"> document.write('<a href="mailto:president'+ '@' + 'edinburghmc.org.uk">' + 'president' + '@' + 'edinburghmc.org.uk</a>');</script></td>
+    </tr>
+    <tr>
+        <td><b>Membership Secretary</b></td>
+        <td>Rhi W</td>
+        <td><script language="JavaScript"> document.write('<a href="mailto:membership_secretary'+ '@' + 'edinburghmc.org.uk">' + 'membership_secretary' + '@' + 'edinburghmc.org.uk</a>');</script></td>
+    </tr>
+    <tr>
+        <td><b>Meets Convenver</b></td>
+        <td>Martha</td>
+        <td>07847 744 995<br><script language="JavaScript"> document.write('<a href="mailto:meets_convener'+ '@' + 'edinburghmc.org.uk">' + 'meets_convener' + '@' + 'edinburghmc.org.uk</a>');</script></td>
+    </tr>
+    <tr>
+        <td><b>Treasurer</b></td>
+        <td>Nigel</td>
+        <td>074447 26805<br><script language="JavaScript"> document.write('<a href="mailto:treasurer'+ '@' + 'edinburghmc.org.uk">' + 'treasurer' + '@' + 'edinburghmc.org.uk</a>');</script></td>
+    </tr>
+    <tr>
+        <td><b>Webmaster</b></td>
+        <td>Chris W</td>
+        <td><script language="JavaScript"> document.write('<a href="mailto:webmaster'+ '@' + 'edinburghmc.org.uk">' + 'webmaster' + '@' + 'edinburghmc.org.uk</a>');</script></td>
+    </tr>
+    <tr>
+        <td><b>Ordinary Member</b></td>
+        <td>Keith</td>
+        <td><script language="JavaScript"> document.write('<a href="mailto:stickshaldane'+ '@' + 'hotmail.com">' + 'stickshaldane' + '@' + 'hotmail.com</a>');</script></td>
+    </tr>
+    <tr>
+        <td><b>Ordinary Member</b></td>
+        <td>Pauline</td>
+        <td>07703 069215</td>
+    </tr>
+</table
+
+{% endblock %}

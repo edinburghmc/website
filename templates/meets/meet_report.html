@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Meet reports{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+
+<div class="divtextbox" id="div1">
+
+<h2>Meet report</h2>
+
+  <h3>{{ report.time }}</h3>
+
+  <div>
+
+  {{ report.text | safe }}
+
+  <p><strong>{{ report.author }}</strong></p>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+
+  <!-- Primary Meta Tags -->
+  <title>{% block title %}{% endblock %} - Edinburgh Mountaineering Club</title>
+  <!-- <meta name="title" content="{% block metatitle %}{% endblock %}"/> -->
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+
+  <!-- Google Analytics -->
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', "UA-121636368-3", "auto");
+    ga('send', "pageview");
+  </script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyB4Q1hWEX448Sfqs8pm6K0D1OhGFMU7VeA",
+      authDomain: "emc-dev-447401.firebaseapp.com",
+      projectId: "emc-dev-447401",
+      storageBucket: "emc-dev-447401.firebasestorage.app",
+      messagingSenderId: "46049743665",
+      appId: "1:46049743665:web:bee57597f59f96160a1610"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+  </script>
+
+
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="wrapper">
+    <!-- <a class="site-title" href="/">
+      <img src="/assets/img/title.png" alt="EMC" />
+    </a> -->
+  
+      <nav class="site-nav">
+        <a href="#" class="menu-icon"></a>
+  
+        <div class="menu">
+          
+            <a class="page-link" href="/">Home</a>
+            <a class="page-link" href="/history.html">History</a>
+            <a class="page-link" href="/meets.html">Meets</a>
+          
+            <a class="page-link" href="/meets/reports.html">
+              Meet Reports
+            </a>
+          
+            <a class="page-link" href="/photos.html">
+              Photos
+            </a>
+            
+            <a class="page-link" href="/climbing.html">
+              Climbing
+            </a>
+            
+            <a class="page-link" href="/contacts.html">
+              Contacts
+            </a>
+
+            <!-- <a class="page-link" href="/contacts.html">
+              Email
+            </a> -->
+
+            <!-- <a class="page-link" href="/contacts.html">
+              Links
+            </a> -->
+
+    
+          
+            <a class="page-link" href="/members/login.html">
+              Member login
+            </a>
+
+        </div>
+      </nav>
+    </div>
+
+    <div class="banner" style="width:100%" align="center">
+      <table style="line-height:0.0" width="750" border="0" cellspacing="0" cellpadding="0" id="header_table">
+        <tr>
+          <td style="width:750px; height:260px">
+            <IMG style="display:block" class="tight" src="/static/img/emc_banner.gif" alt="[EMC Banner]">
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </header>
+
+  <div class="page-content">
+    <div class="wrapper">
+      <div class="home">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+      <div class="footer-col-wrapper">
+        <div class="footer-col footer-col-1">
+          <h4>CONTACT</h4>
+  
+          <div class="social-links">
+            <div class="social-link contact-links">
+
+              <img
+                src="/static/img/icons/email.png"
+                alt="email"
+              />
+                  <a href="mailto:membership@edinburghmc.org.uk" id="email-link">
+                    membership@edinburghmc.org.uk
+                  </a>
+            </div>
+  
+          </div>
+        </div>
+  
+        <div class="footer-col footer-col-2">
+            <h4>FOLLOW</h4>
+  
+            <div class="social-links follow-links">
+
+
+                <!-- <div class="social-link">
+                  <img
+                    src="/static/img/icons/twitter.png"
+                    alt="twitter"
+                  />
+                  <a href="http://x.com/EdinburghMC">Twitter</a>
+                </div> -->
+  
+                <div class="social-link">
+                  <img
+                    src="/static/img/icons/facebook.png"
+                    alt="facebook"
+                  />
+                  <a href="https://facebook.com/edinburghmc">Facebook</a>
+                </div>
+
+                <div class="social-link">
+
+                
+                  <img
+                    src="/static/img/icons/rss.png"
+                    alt="rss"
+                  />
+                  <a href="/feed.xml">
+                    
+                      RSS
+                    
+                  </a>
+                </div>
+
+                <!-- <div class="social-link">
+                  <img
+                    src="/static/img/icons/instagram.png"
+                    alt="instagram"
+                  />
+                  <a href="https://instagram.com/emc">Instagram</a>
+                </div> -->
+
+
+            </div>
+        </div>
+  
+        <div class="footer-col footer-col-3 powered-by">
+          <p>
+            <a href="{{ url_for('cookies') }}">Cookies</a>
+            <br />
+            <a href="{{ url_for('dataprivacy') }}">Data privacy</a>
+            <br />
+            inspired by <a href="https://github.com/eliottvincent/bay">Bay</a> | <span id="year"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src={{ url_for('static', filename="js/vendor/cash-4.1.5.min.js") }}></script>
+  <script type="text/javascript" src={{ url_for('static', filename='js/site.js') }}></script>
+
+</body>
+</html>
